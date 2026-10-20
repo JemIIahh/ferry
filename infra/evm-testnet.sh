@@ -121,7 +121,8 @@ Order on the real network: keys, fund (status says what and where), deploy, up, 
 
 Before acting, deploy, up and swap check on the RPC that the chain id is $CHAIN_ID and that
 $USDC reports symbol "USDC" and 6 decimals. ferryd itself refuses to start unless the
-code at the FerryLock address is the FerryLock it was built with.
+code at the FerryLock address is the FerryLock it was built with, and unless the token's own
+symbol() and decimals() are the USDC and 6 it is started with.
 
 Deadlines (seconds of Base block time; FerryLock compares block timestamps):
   T1_SECS=$T1_SECS (45 min) from the proposal to t1, the end of the claim window. Base Sepolia
@@ -580,6 +581,7 @@ start_ferryd() { # start_ferryd <key> <role> <name> <api port> <peer port> [extr
     --listen "127.0.0.1:$peer_port" --data-dir "$STATE/$key" "${zec_args[@]}" \
     ${origins[@]+"${origins[@]}"} \
     --evm-rpc "$EVM_RPC" --evm-contract "$lock" --evm-token "$USDC" --evm-key-file "$STATE/$key.key" \
+    --evm-token-symbol USDC --evm-token-decimals 6 \
     --evm-t1-secs "$T1_SECS" --evm-refund-secs "$REFUND_SECS" --evm-delta-secs "$DELTA_SECS" \
     --evm-lock-confs "$LOCK_CONFS" --evm-log-chunk "$LOG_CHUNK" --zec-confs "$ZEC_CONFS" \
     --poll-ms "$POLL_MS" "$@" ${extra[@]+"${extra[@]}"} >>"$STATE/logs/$key.log" 2>&1 &
