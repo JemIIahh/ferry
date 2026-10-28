@@ -3,9 +3,15 @@
 **Swap shielded ZEC for BTC, LTC, USDC or WETH, peer to peer. No bridge, no custodian, and the ZEC
 never leaves the shielded pool.**
 
-[What is real](docs/WHAT-IS-REAL.md) · [How a swap works](#how-a-swap-works) ·
-[Architecture](#architecture) · [Privacy](#privacy) · [Protocol](docs/PROTOCOL.md) ·
-[Threat model](docs/THREAT-MODEL.md) · [Run a node](docs/RUN-A-NODE.md)
+[Demo video](https://youtu.be/UonetAwsVa4) · [What is real](docs/WHAT-IS-REAL.md) ·
+[How a swap works](#how-a-swap-works) · [Architecture](#architecture) · [Privacy](#privacy) ·
+[Protocol](docs/PROTOCOL.md) · [Threat model](docs/THREAT-MODEL.md) ·
+[Run a node](docs/RUN-A-NODE.md)
+
+[![Ferry demo video](https://img.youtube.com/vi/UonetAwsVa4/maxresdefault.jpg)](https://youtu.be/UonetAwsVa4)
+
+*The two-minute demo: a node started with one command, then a real swap of 0.10 ZEC for 4 USDC on
+Zcash testnet and Base Sepolia.*
 
 <!-- Public demo: add its URL to the line above once it is live. -->
 
